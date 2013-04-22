@@ -1,0 +1,53 @@
+*************************************************************************************************
+*                                           stl4droid                                           *
+*************************************************************************************************
+
+*** PORTUGUÊS ***
+Como usar stl4droid:
+
+1) Inicialize um decode, que deve ter o contexto e o arquivo stl a ser processado.
+O arquivo stl pode ser binário ou ascii, e pode ser passado como parâmetro através de Resource (a)
+ou o path do arquivo (b). Por exemplo:
+a) DecodeStl decode = new DecodeStl(context, R.raw.stl_binary);
+   DecodeStl decode = new DecodeStl(context, R.raw.stl_ascii);
+b) DecodeStl decode = new DecodeStl(context, "/mnt/sdcard/STLs/stl_binary.stl");
+   DecodeStl decode = new DecodeStl(context, "/mnt/sdcard/STLs/stl_ascii.stl");
+
+2) Após inicializar, basta chamar o método read(), que vai processar o arquivo stl e
+transformá-lo em um objeto do tipo StlBean.
+
+StlBean stl = decode.read();
+
+3) Agora basta utilizar o objeto criado da forma que precisar.
+
+*** ENGLISH ***
+How use stl4droid:
+
+1) Initialize a decode, would have a context and the STL file to be processed.
+The file stl could be binary or ascii, and can be pass how parameter by Resource (a)
+or the path of file (b). For example:
+a) DecodeStl decode = new DecodeStl(context, R.raw.stl_binary);
+   DecodeStl decode = new DecodeStl(context, R.raw.stl_ascii);
+b) DecodeStl decode = new DecodeStl(context, "/mnt/sdcard/STLs/stl_binary.stl");
+   DecodeStl decode = new DecodeStl(context, "/mnt/sdcard/STLs/stl_ascii.stl");
+
+2) After initialize, just call the method read(), that will process the file stl and
+makes it a object of type StlBean.
+
+StlBean stl = decode.read();
+
+3) Now just use the object created how you need.
+
+Method Summary
+Float     | getCentroX()
+Float     | getCentroY()
+Float     | getCentroZ()
+float[]   | getNormais()
+Integer   | getQtdTriangles()
+float[]   | getVertices()
+void      | setCentroX(Float centroX)
+void      | setCentroY(Float centroY)
+void      | setCentroZ(Float centroZ)
+void      | setNormais(float[] normais)
+void      | setQtdTriangles(Integer qtdTriangles)
+void      | setVertices(float[] vertices)
